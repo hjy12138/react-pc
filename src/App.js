@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+// 导入路由
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
+// 导入页面组件
+import Login from './pages/Login'
+import Layout from './pages/Layout'
+import { Button } from 'antd'
+
+// 配置路由规则
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-       
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <div className="App">
+      <Button type="primary">Button</Button>
+       <Routes>
+            <Route path="/" element={<Layout/>}/>
+            <Route path="/login" element={<Login/>}/>
+        </Routes>
+      </div>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
